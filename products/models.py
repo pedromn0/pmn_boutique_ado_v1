@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Category(models.Model):
@@ -22,6 +23,8 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
+    # Above there is a typo in the variable has_seizes which correctly would be has_sizes instead. Did not change because this was already migrated to django
+    has_seizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
